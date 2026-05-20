@@ -1,6 +1,6 @@
 # AI 股票分析面板
 
-一个 Next.js 全栈单体应用：输入 A 股股票代码，调用 Tushare 获取数据，再调用 OpenAI-compatible LLM 返回严格 JSON 分析，并把原始数据和分析结果保存到 Supabase。
+一个 Next.js 全栈单体应用：输入 A 股股票代码，调用 Tushare 获取数据，再调用 LLM 返回严格 JSON 分析，并把原始数据和分析结果保存到 Supabase。
 
 ## 功能
 
