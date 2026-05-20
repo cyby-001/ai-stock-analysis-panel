@@ -208,7 +208,7 @@ export default function Home() {
               <span>{analysis ? riskLabels[analysis.risk_level] : "--"}</span>
             </div>
 
-            <p className="summary">{analysis?.summary ?? "获取股票数据后点击 AI 分析，系统会返回结构化 JSON 并保存到 Supabase。"}</p>
+            <p className="summary">{analysis?.summary ?? "获取股票数据后点击 AI 分析，系统会返回结构化分析结果"}</p>
 
             <div className="list-columns">
               <div>
@@ -283,7 +283,7 @@ export default function Home() {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={10}>获取数据后显示 Tushare daily 返回的全部字段</td>
+                    <td colSpan={10}>获取数据后显示近期日线数据</td>
                   </tr>
                 )}
               </tbody>
