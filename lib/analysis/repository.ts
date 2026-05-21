@@ -25,7 +25,7 @@ type SupabaseLike = {
         single: () => PromiseLike<{ data: unknown; error: { message: string } | null }>;
       };
     };
-    select?: (columns: string) => {
+    select: (columns: string) => {
       order: (column: string, options: { ascending: boolean }) => {
         limit: (count: number) => PromiseLike<{ data: unknown; error: { message: string } | null }>;
       };
@@ -55,12 +55,12 @@ export function createAnalysisRepository(client: SupabaseLike) {
     },
 
     async listRecent(limit = 10): Promise<AnalysisRecord[]> {
-      const query = client.from("stock_analyses").select;
-      if (!query) {
-        throw new Error("Supabase client does not support select");
-      }
+      const { data, error } = await client
+        .from("stock_analyses")
+        .select("*")
+        .order("created_at", { ascending: false })
+        .limit(limit);
 
-      const { data, error } = await query("*").order("created_at", { ascending: false }).limit(limit);
       if (error) {
         throw new Error(`读取最近分析失败：${error.message}`);
       }
