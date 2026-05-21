@@ -9,6 +9,7 @@ export async function GET() {
     const records = await repository.listRecent(10);
     return NextResponse.json({ records });
   } catch (error) {
+    console.error（"[recent]", error）;
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "读取最近分析失败" },
       { status: 400 }
