@@ -32,7 +32,7 @@ SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_or_secret_key
 
 ## Tushare 权限说明
 
-120 积分账号默认只能调用 `daily` 股票非复权日线行情。本项目第一版默认只用 Tushare 调用 `daily`，不会调用 `stock_basic`、`daily_basic` 等更高积分接口。行业、上市日期这类字段需要更高权限接口，因此页面改为展示昨收、涨跌额、成交量、成交额等日线指标。
+120 积分账号默认只能调用 `daily` 股票非复权日线行情。本项目第一版默认只用 Tushare 调用 `daily`，不会调用 `stock_basic`、`daily_basic` 等更高积分接口。行业、上市日期这类字段需要更高权限接口，因此页面仅展示昨收、涨跌额、成交量、成交额等日线指标。
 
 ## Supabase 建表
 
@@ -62,7 +62,7 @@ create index if not exists stock_analyses_stock_code_idx
 
 ## Render 部署
 
-1. 推送项目到 GitHub。
+1. 连接到 GitHub。
 2. 在 Render 新建 Web Service，连接该仓库。
 3. 设置：
    - Build Command: `npm install && npm run build`
