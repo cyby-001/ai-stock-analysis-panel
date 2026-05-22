@@ -38,8 +38,6 @@ SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_or_secret_key
 
 ## Supabase 建表
 
-`SUPABASE_SERVICE_ROLE_KEY` 必须填 Supabase 后台的 service role/secret key，不能填 `sb_publishable...` 或 anon public key。这个 key 只在服务端使用，不要暴露到浏览器。
-
 在 Supabase SQL Editor 中执行：
 
 ```sql
